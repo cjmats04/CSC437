@@ -5,6 +5,7 @@
 
 
 html {
+  height: 100%;
   font-size: var(--fs-base);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -13,6 +14,7 @@ html {
 }
 
 body {
+  height: 100%;
   margin: 0;
   font-family: var(--font-sans);
   line-height: var(--leading);
@@ -170,11 +172,22 @@ th, td {
    flex-direction: column;
    align-items: stretch;
   }
+  /* Stack header content on narrow screens */
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .site-title { margin-bottom: calc(var(--space) * 0.5); }
+  .site-nav dl.nav-list { flex-direction: column; gap: calc(var(--space) * 0.25); align-items: stretch; }
+  .site-nav dl.nav-list dt.nav-item { display:block; }
+  .site-nav .nav-link { display:block; width:100%; padding: calc(var(--space) * 0.5) calc(var(--space) * 0.75); }
+  /* Make content use full width on small screens */
+  .content { padding: calc(var(--space) * 0.75); width: 100%; }
 }
 
 /* Layout backgrounds and page-specific accents */
 .app-root {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background: var(--page-bg);
@@ -184,32 +197,69 @@ th, td {
   background: var(--page-surface);
   padding: calc(var(--space) * 0.6) calc(var(--space) * 1);
   border-bottom: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--space) * 1);
 }
 .site-title {
   margin: 0 0 0.25rem 0;
   font-size: 1.125rem;
 }
-.site-nav .nav-list {
-  list-style: none;
+.site-nav dl.nav-list {
   margin: 0;
   padding: 0;
   display: flex;
   gap: calc(var(--space) * 0.5);
+  align-items: center;
+}
+
+.site-nav dl.nav-list dt.nav-item {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
 }
 .site-nav .nav-link { padding: 0.25rem 0.5rem; display:inline-block; }
 
 .app-main {
+  display: flex;
   flex: 1 1 auto;
-    padding: calc(var(--space) * 1);
-    background: var(--page-bg);
-  }
+  flex-direction: column;
+  padding: calc(var(--space) * 1);
+  background: var(--page-bg);
+}
 
 .content {
   background: var(--page-surface);
   padding: calc(var(--space) * 0.9);
   border-radius: var(--radius);
+  /* make content stretch full width horizontally and grow vertically */
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  flex: 1 1 auto;
 }
 
+dl.entity-list {
+  margin: 0;
+  padding: 0;
+}
+dl.entity-list dt.entity-term {
+  margin: 0 0 0.25rem 0;
+  font-weight: 600;
+  color: inherit;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+dl.entity-list dd.entity-desc {
+  margin: 0 0 1rem 0;
+  color: var(--text);
+  padding-left: 0;
+}
+
+/* make icons align when placed inside dt */
 svg.icon {
   display: inline;
   height: 2em;

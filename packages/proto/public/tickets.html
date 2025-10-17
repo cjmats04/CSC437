@@ -4,36 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tickets</title>
+  <link rel="stylesheet" href="/styles/reset.css" />
   <link rel="stylesheet" href="/styles/page.css" />
 </head>
 <body>
   <div id="app" class="app-root">
     <header class="app-header">
-      <h1 class="site-title">Concerts App</h1>
+      <h1 class="site-title">ConcertFinder</h1>
       <nav class="site-nav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li class="nav-item"><a class="nav-link" href="concerts.html">Concerts</a></li>
-          <li class="nav-item"><a class="nav-link" href="artists.html">Artists</a></li>
-          <li class="nav-item"><a class="nav-link" href="venues.html">Venues</a></li>
-          <li class="nav-item"><a class="nav-link" href="tickets.html">Tickets</a></li>
-          <li class="nav-item"><a class="nav-link" href="genres.html">Genres</a></li>
-        </ul>
+        <dl class="nav-list">
+          <dt class="nav-item"><a class="nav-link" href="concerts.html">Concerts</a></dt>
+          <dt class="nav-item"><a class="nav-link" href="artists.html">Artists</a></dt>
+          <dt class="nav-item"><a class="nav-link" href="venues.html">Venues</a></dt>
+          <dt class="nav-item"><a class="nav-link" href="tickets.html">Tickets</a></dt>
+          <dt class="nav-item"><a class="nav-link" href="genres.html">Genres</a></dt>
+        </dl>
       </nav>
     </header>
 
     <main class="app-main page-tickets" id="main">
       <section class="content tickets-content">
         <h1 class="page-title">All Tickets</h1>
-        <ul class="entity-list tickets-list">
-          <li id="vip" class="entity-item ticket-item">
-            <span class="ticket-name">VIP Pass</span><br>
-            Concert: <a href="concerts.html#concert1">Rock Night Live</a>
-          </li>
-          <li id="general" class="entity-item ticket-item">
-            <span class="ticket-name">General Admission</span><br>
-            Concert: <a href="concerts.html#concert2">Jazz in the Park</a>
-          </li>
-        </ul>
+        <dl class="entity-list tickets-list">
+          <dt id="vip" class="entity-term ticket-item">VIP Pass</dt>
+          <dd class="entity-desc">Concert: <a href="concerts.html#concert1">Rock Night Live</a></dd>
+
+          <dt id="general" class="entity-term ticket-item">General Admission</dt>
+          <dd class="entity-desc">Concert: <a href="concerts.html#concert2">Jazz in the Park</a></dd>
+        </dl>
 
         <p class="back-link"><a href="index.html">Back to Home</a></p>
       </section>
