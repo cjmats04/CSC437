@@ -1,17 +1,8 @@
 /* page.css - default page styling using tokens
   expects tokens in a sibling file (e.g. tokens.css or tokens.csss)
 */
-
-/* import tokens (adjust path/filename if needed) */
 @import './tokens.css';
 
-
-/* Box model and sensible reset */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 html {
   font-size: var(--fs-base);
@@ -219,7 +210,14 @@ th, td {
   border-radius: var(--radius);
 }
 
-/* Page-specific accent borders for visual differentiation */
+svg.icon {
+  display: inline;
+  height: 2em;
+  width: 2em;
+  vertical-align: top;
+  fill: currentColor;
+}
+
 .page-home .content { border-left: 4px solid transparent; }
 .page-artists .content { border-left: 4px solid var(--accent); }
 .page-concerts .content { border-left: 4px solid var(--primary); }
