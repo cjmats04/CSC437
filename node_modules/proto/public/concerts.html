@@ -4,28 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Concerts</title>
+  <link rel="stylesheet" href="/styles/page.css" />
 </head>
 <body>
-  <h1>All Concerts</h1>
-  <ul>
-    <li>
-      Rock Night Live<br>
-      <strong>Date/Time:</strong> October 10, 2025<br>
-      <strong>Venue:</strong> <a href="venues.html#venue1">Madison Square Garden</a><br>
-      <strong>Artist:</strong> <a href="artists.html#artist1">The Rockers</a><br>
-      <strong>Genre:</strong> <a href="genres.html#rock">Rock</a><br>
-      <strong>Ticket:</strong> <a href="tickets.html#vip">VIP Pass</a>
-    </li>
-    <li>
-      Jazz in the Park<br>
-      <strong>Date/Time:</strong> October 15, 2025<br>
-      <strong>Venue:</strong> <a href="venues.html#venue2">Central Park Stage</a><br>
-      <strong>Artist:</strong> <a href="artists.html#artist2">Smooth Jazz Ensemble</a><br>
-      <strong>Genre:</strong> <a href="genres.html#jazz">Jazz</a><br>
-      <strong>Ticket:</strong> <a href="tickets.html#general">General Admission</a>
-    </li>
-  </ul>
-
-  <p><a href="index.html">Back to Home</a></p>
+  <div id="app" class="app-root">
+    <header class="app-header">
+      <h1 class="site-title">Concerts App</h1>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="concerts.html">Concerts</a></li>
+          <li class="nav-item"><a class="nav-link" href="artists.html">Artists</a></li>
+          <li class="nav-item"><a class="nav-link" href="venues.html">Venues</a></li>
+          <li class="nav-item"><a class="nav-link" href="tickets.html">Tickets</a></li>
+          <li class="nav-item"><a class="nav-link" href="genres.html">Genres</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main class="app-main page-concerts" id="main">
+      <section class="content concerts-content">
+        <h1 class="page-title">All Concerts</h1>
+        <ul class="entity-list concerts-list">
+          <li class="entity-item concert-item">
+            <span class="concert-title">Rock Night Live</span><br>
+            <strong>Date/Time:</strong> October 10, 2025<br>
+            <strong>Venue:</strong> <a href="venues.html#venue1">Madison Square Garden</a><br>
+            <strong>Artist:</strong> <a href="artists.html#artist1">The Rockers</a><br>
+            <strong>Genre:</strong> <a href="genres.html#rock">Rock</a><br>
+            <strong>Ticket:</strong> <a href="tickets.html#vip">VIP Pass</a>
+          </li>
+          <li class="entity-item concert-item">
+            <span class="concert-title">Jazz in the Park</span><br>
+            <strong>Date/Time:</strong> October 15, 2025<br>
+            <strong>Venue:</strong> <a href="venues.html#venue2">Central Park Stage</a><br>
+            <strong>Artist:</strong> <a href="artists.html#artist2">Smooth Jazz Ensemble</a><br>
+            <strong>Genre:</strong> <a href="genres.html#jazz">Jazz</a><br>
+            <strong>Ticket:</strong> <a href="tickets.html#general">General Admission</a>
+          </li>
+        </ul>
+        
+        <p class="back-link"><a href="index.html">Back to Home</a></p>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
