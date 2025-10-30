@@ -1,8 +1,3 @@
-/* tokens.css
-  Generic page design tokens and lightweight base styles
-  - Use these variables throughout your app for consistent theming.
-*/
-
 /* Design tokens */
 :root {
   /* Color palette */
@@ -50,4 +45,17 @@
   --duration-fast: 150ms;
   --duration-medium: 250ms;
   --ease: cubic-bezier(.2,.9,.4,1);
+}
+
+/* Dark mode token overrides: toggled by adding `dark-mode` to the <body> element */
+body.dark-mode {
+  --bg: rgb(15 23 42); /* very dark blue-gray */
+  --surface: rgb(30 41 59); /* slightly lighter surface */
+  --text: rgb(248 250 252); /* near-white text */
+  --muted: rgb(148 163 184);
+  --primary: rgb(96 165 250); /* lighter blue for primary accent */
+  --primary-foreground: rgb(10 20 30);
+  /* Also override the page-level aliases so elements on <html> and other roots pick up dark values */
+  --page-bg: rgb(15 23 42);
+  --page-surface: rgb(22 29 48);
 }
