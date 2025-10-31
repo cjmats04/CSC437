@@ -1,0 +1,18 @@
+[
+  {
+    "id": "venue1",
+    "name": "Madison Square Garden",
+    "imgSrc": "/img/MSG.jpg",
+    "imgAlt": "Madison Square Garden",
+    "href": "/concerts.html#concert1",
+    "eventTitle": "Rock Night Live"
+  },
+  {
+    "id": "venue2",
+    "name": "Central Park Stage",
+    "imgSrc": "/img/Central-Park.jpg",
+    "imgAlt": "Central Park Stage",
+    "href": "/concerts.html#concert2",
+    "eventTitle": "Jazz in the Park"
+  }
+]

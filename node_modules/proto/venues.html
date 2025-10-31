@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venues</title>
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/page.css" />
+  <link rel="stylesheet" href="/styles/venues.css" />
+  <script type="module" src="/js/darkmode.js"></script>
+  <script type="module">
+    import { define } from "@calpoly/mustang";
+    import { VenueElement } from "/src/venues.js";
+    // import the wrapper which hydrates a list of venues from JSON
+    import { VenuesList } from "/src/venues-data.ts";
+
+    define({
+      "concert-venue": VenueElement,
+      "concert-venues": VenuesList
+    });
+  </script>
+</head>
+<body>
+  <div id="app" class="app-root">
+    <header class="app-header">
+      <h1 class="site-title">ConcertFinder</h1>
+      <label class="darkmode-label">
+        <input id="dark-mode-toggle" type="checkbox" autocomplete="off" />
+        Dark mode
+      </label>
+      <nav class="site-nav" aria-label="Main navigation">
+        <div class="nav-list">
+          <div class="nav-item"><a class="nav-link" href="concerts.html">Concerts</a></div>
+          <div class="nav-item"><a class="nav-link" href="artists.html">Artists</a></div>
+          <div class="nav-item"><a class="nav-link" href="venues.html">Venues</a></div>
+          <div class="nav-item"><a class="nav-link" href="tickets.html">Tickets</a></div>
+          <div class="nav-item"><a class="nav-link" href="genres.html">Genres</a></div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="app-main page-venues" id="main">
+      <section class="content venues-content">
+        <h1 class="page-title">All Venues</h1>
+        <concert-venues src="/data/venues.json"></concert-venues>
+
+        <p class="back-link"><a href="index.html">Back to Home</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

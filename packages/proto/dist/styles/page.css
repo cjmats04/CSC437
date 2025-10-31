@@ -1,0 +1,276 @@
+/* page.css - default page styling using tokens
+  expects tokens in a sibling file (e.g. tokens.css or tokens.csss)
+*/
+@import './tokens.css';
+
+
+html {
+  height: 100%;
+  font-size: var(--fs-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--page-bg);
+  color: var(--text);
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-sans);
+  line-height: var(--leading);
+  background: var(--page-bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Page container */
+.page {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: calc(var(--space) * 1.25);
+  display: block;
+  gap: var(--space);
+}
+
+/* Surface / cards */
+.surface {
+  background: var(--page-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: calc(var(--space) * 0.9);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 0.5rem 0;
+  color: inherit;
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+h1 { font-size: clamp(1.6rem, 2.4vw + 1rem, 2.25rem); }
+h2 { font-size: clamp(1.25rem, 1.8vw + 0.8rem, 1.75rem); }
+h3 { font-size: 1.125rem; }
+
+p {
+  margin: 0 0 1rem 0;
+  color: var(--text);
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Muted text */
+.muted, small {
+  color: var(--muted);
+  font-size: 0.9em;
+}
+
+/* Buttons */
+.button, button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: calc(var(--radius) / 1.5);
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.button.secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.button:disabled,
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Forms */
+input, textarea, select {
+  font: inherit;
+  padding: 0.5rem 0.65rem;
+  border-radius: calc(var(--radius) / 1.5);
+  border: 1px solid rgba(0,0,0,0.08);
+  background: transparent;
+  color: inherit;
+  outline: none;
+}
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 16%, transparent);
+  border-color: var(--primary);
+}
+
+/* Code blocks and inline code */
+code {
+  font-family: var(--font-mono);
+  background: rgba(0,0,0,0.04);
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  font-size: 0.92em;
+}
+pre {
+  background: rgba(0,0,0,0.03);
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  overflow: auto;
+}
+
+/* Media and tables */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Utility helpers */
+.row {
+  display: flex;
+  gap: var(--space);
+  align-items: center;
+}
+.col {
+  flex: 1 1 auto;
+}
+.center {
+  display: grid;
+  place-items: center;
+}
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+  .page {
+   padding: calc(var(--space) * 0.75);
+  }
+  .row {
+   flex-direction: column;
+   align-items: stretch;
+  }
+  /* Stack header content on narrow screens */
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .site-title { margin-bottom: calc(var(--space) * 0.5); }
+  .site-nav .nav-list { flex-direction: column; gap: calc(var(--space) * 0.25); align-items: stretch; }
+  .site-nav .nav-list .nav-item { display:block; }
+  .site-nav .nav-link { display:block; width:100%; padding: calc(var(--space) * 0.5) calc(var(--space) * 0.75); }
+  /* Make content use full width on small screens */
+  .content { padding: calc(var(--space) * 0.75); width: 100%; }
+}
+
+/* Layout backgrounds and page-specific accents */
+.app-root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--page-bg);
+}
+
+.app-header {
+  background: var(--page-surface);
+  padding: calc(var(--space) * 0.6) calc(var(--space) * 1);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--space) * 1);
+}
+.site-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.125rem;
+}
+.site-nav .nav-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: calc(var(--space) * 0.5);
+  align-items: center;
+}
+
+.site-nav .nav-list .nav-item {
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+.site-nav .nav-link { padding: 0.25rem 0.5rem; display:inline-block; }
+
+.app-main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: calc(var(--space) * 1);
+  background: var(--page-bg);
+}
+
+.content {
+  background: var(--page-surface);
+  padding: calc(var(--space) * 0.9);
+  border-radius: var(--radius);
+  /* make content stretch full width horizontally and grow vertically */
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  flex: 1 1 auto;
+}
+
+dl.entity-list {
+  margin: 0;
+  padding: 0;
+}
+dl.entity-list dt.entity-term {
+  margin: 0 0 0.25rem 0;
+  font-weight: 600;
+  color: inherit;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+dl.entity-list dd.entity-desc {
+  margin: 0 0 1rem 0;
+  color: var(--text);
+  padding-left: 0;
+}
+
+/* make icons align when placed inside dt */
+svg.icon {
+  display: inline;
+  height: 2em;
+  width: 2em;
+  vertical-align: top;
+  fill: currentColor;
+}
+
+.page-home .content { border-left: 4px solid transparent; }
+.page-artists .content { border-left: 4px solid var(--accent); }
+.page-concerts .content { border-left: 4px solid var(--primary); }
+.page-genres .content { border-left: 4px solid var(--accent); }
+.page-tickets .content { border-left: 4px solid var(--primary); }
+.page-venues .content { border-left: 4px solid var(--accent); }
