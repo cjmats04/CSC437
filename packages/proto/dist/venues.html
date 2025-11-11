@@ -7,7 +7,9 @@
   <link rel="stylesheet" href="/styles/reset.css" />
   <link rel="stylesheet" href="/styles/page.css" />
   <link rel="stylesheet" href="/styles/venues.css" />
-    <script type="module" src="/js/darkmode.js"></script>
+  <script type="module" src="/js/darkmode.js"></script>
+  <script type="module" crossorigin src="/assets/sub-CmBZkBAw.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
 </head>
 <body>
   <div id="app" class="app-root">
@@ -31,23 +33,7 @@
     <main class="app-main page-venues" id="main">
       <section class="content venues-content">
         <h1 class="page-title">All Venues</h1>
-        <dl class="entity-list venues-list">
-          <dt id="venue1" class="entity-term venue-item">
-            <img class="venue-image" src="/img/MSG.jpg" alt="Madison Square Garden">
-            Madison Square Garden
-          </dt>
-          <dd class="entity-desc">
-            Concerts: <a href="concerts.html#concert1">Rock Night Live</a>
-          </dd>
-
-          <dt id="venue2" class="entity-term venue-item">
-            <img class="venue-image" src="/img/Central-Park.jpg" alt="Central Park Stage">
-            Central Park Stage
-          </dt>
-          <dd class="entity-desc">
-            Concerts: <a href="concerts.html#concert2">Jazz in the Park</a>
-          </dd>
-        </dl>
+        <concert-venues src="/data/venues.json"></concert-venues>
 
         <p class="back-link"><a href="index.html">Back to Home</a></p>
       </section>

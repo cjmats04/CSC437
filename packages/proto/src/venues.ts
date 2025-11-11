@@ -2,8 +2,7 @@ import { html, css, LitElement, nothing } from "lit";
 import { property } from "lit/decorators.js";
 
 export class VenueElement extends LitElement {
-  // Reflect attributes into properties
-  // use inherited HTMLElement.id (non-optional string) instead of redeclaring it
+  
 
   @property({ attribute: "img-src" })
   imgSrc?: string;
@@ -31,5 +30,22 @@ export class VenueElement extends LitElement {
     `;
   }
 
-  static styles = css``;
+  static styles = css`
+    .venue-image {
+      display: block;
+      width: 100%;
+      max-width: 560px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: calc(var(--radius) / 1.5);
+      margin-bottom: calc(var(--space) * 0.5);
+    }
+
+    @media (max-width: 720px) {
+      .venue-image {
+        height: 160px;
+        max-width: 100%;
+      }
+    }
+  `;
 }

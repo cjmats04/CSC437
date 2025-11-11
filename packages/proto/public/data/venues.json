@@ -1,6 +1,6 @@
 [
   {
-    "id": "venue1",
+    "id": "001",
     "name": "Madison Square Garden",
     "imgSrc": "/img/MSG.jpg",
     "imgAlt": "Madison Square Garden",
@@ -8,7 +8,7 @@
     "eventTitle": "Rock Night Live"
   },
   {
-    "id": "venue2",
+    "id": "002",
     "name": "Central Park Stage",
     "imgSrc": "/img/Central-Park.jpg",
     "imgAlt": "Central Park Stage",
