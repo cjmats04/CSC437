@@ -1,5 +1,6 @@
 import { LitElement, html } from "lit";
 import { property, state } from "lit/decorators.js";
+import { Auth, Observer } from "@calpoly/mustang";
 
 interface Venue {
   id?: string;
@@ -17,14 +18,31 @@ export class VenuesList extends LitElement {
   @state()
   venues: Venue[] = [];
 
+  _authObserver = new Observer<Auth.Model>(this, "cf:auth");
+  _user?: Auth.User;
+
+  get authorization(): Record<string, string> | undefined {
+    if (this._user?.authenticated) {
+      console.log("Providing auth header with token");
+      return {
+        Authorization: `Bearer ${(this._user as Auth.AuthenticatedUser).token}`
+      };
+    }
+    console.log("No authenticated user; no auth header");
+    return undefined;
+  }
+
   connectedCallback() {
     super.connectedCallback();
+    this._authObserver.observe((auth: Auth.Model) => {
+      this._user= auth.user;
+    });
     if (this.src) this.hydrate(this.src);
   }
 
   async hydrate(src: string) {
     try {
-      const res = await fetch(src);
+      const res = await fetch(src, { headers: this.authorization });
       if (!res.ok) {
         console.error("Failed to fetch", src, res.status);
         return;
