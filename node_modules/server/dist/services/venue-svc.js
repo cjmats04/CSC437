@@ -45,4 +45,23 @@ function get(id) {
     throw `${id} Not Found`;
   });
 }
-var venue_svc_default = { index, get };
+function create(json) {
+  const v = new VenueModel(json);
+  return v.save();
+}
+function update(venueid, venue) {
+  return VenueModel.findOneAndUpdate({ venueid }, venue, {
+    new: true
+  }).then((updated) => {
+    if (!updated) throw `${venueid} not updated`;
+    else return updated;
+  });
+}
+function remove(venueid) {
+  return VenueModel.findOneAndDelete({ venueid }).then(
+    (deleted) => {
+      if (!deleted) throw `${venueid} not deleted`;
+    }
+  );
+}
+var venue_svc_default = { index, get, create, update, remove };

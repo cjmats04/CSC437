@@ -23,23 +23,16 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var import_express = __toESM(require("express"));
 var import_mongo = require("./services/mongo");
-var import_venue_svc = __toESM(require("./services/venue-svc"));
+var import_venues = __toESM(require("./routes/venues"));
 (0, import_mongo.connect)("ConcertFinder");
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
 const staticDir = process.env.STATIC || "public";
 app.use(import_express.default.static(staticDir));
+app.use(import_express.default.json());
+app.use("/venues", import_venues.default);
 app.get("/hello", (req, res) => {
   res.send("Hello, World");
-});
-app.get("/venues/:venueid", (req, res) => {
-  const { venueid } = req.params;
-  import_venue_svc.default.get(venueid).then((data) => {
-    if (data) res.set("Content-Type", "application/json").send(JSON.stringify(data));
-    else res.status(404).send(`Venue ${venueid} Not Found`);
-  }).catch((err) => {
-    res.status(500).send(err);
-  });
 });
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
