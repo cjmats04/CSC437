@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artists</title>
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/page.css" />
+   <script type="module" src="/js/darkmode.js"></script>
+   <script type="module">
+    import { define, Auth } from "@calpoly/mustang";
+    import { AppHeader } from "/src/cf-header.ts";
+
+    define({
+      "cf-header": AppHeader, 
+
+      "mu-auth": Auth.Provider
+    });
+  </script>
+</head>
+<body>
+  <div id="app" class="app-root">
+    <cf-header></cf-header>
+
+    <main class="app-main page-artists" id="main">
+      <section class="content artists-content">
+        <h1 class="page-title">All Artists</h1>
+        <dl class="entity-list artists-list">
+          <dt id="artist1" class="entity-term artist-item">The Rockers</dt>
+          <dd class="entity-desc">
+            (<a href="concerts.html#concert1">Rock Night Live</a>)<br>
+            Genre: <a href="genres.html#rock">Rock</a>
+          </dd>
+
+          <dt id="artist2" class="entity-term artist-item">Smooth Jazz Ensemble</dt>
+          <dd class="entity-desc">
+            (<a href="concerts.html#concert2">Jazz in the Park</a>)<br>
+            Genre: <a href="genres.html#jazz">Jazz</a>
+          </dd>
+        </dl>
+
+        <p class="back-link"><a href="index.html">Back to Home</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

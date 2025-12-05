@@ -7,30 +7,16 @@
   <link rel="stylesheet" href="/styles/reset.css" />
   <link rel="stylesheet" href="/styles/page.css" />
   <link rel="stylesheet" href="/styles/venues.css" />
-  <script type="module" src="/js/darkmode.js"></script>
-  <script type="module" crossorigin src="/assets/sub-DcHbJu5e.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-B5Qt9EMX.js">
-  <link rel="modulepreload" crossorigin href="/assets/state-_awXqHhp.js">
+  <script type="module" src="/js/darkmode.js"></script>
+  <script type="module" crossorigin src="/assets/venues-DHDCYiNK.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/lit-element-Dzoz5mRd.js">
+  <link rel="modulepreload" crossorigin href="/assets/cf-header-B-VDbp9Z.js">
+  <link rel="modulepreload" crossorigin href="/assets/state-CASp9Hhz.js">
 </head>
 <body>
   <mu-auth provides="cf:auth">
     <div id="app" class="app-root">
-      <header class="app-header">
-        <h1 class="site-title">ConcertFinder</h1>
-        <label class="darkmode-label">
-          <input id="dark-mode-toggle" type="checkbox" autocomplete="off" />
-          Dark mode
-        </label>
-        <nav class="site-nav" aria-label="Main navigation">
-          <div class="nav-list">
-            <div class="nav-item"><a class="nav-link" href="concerts.html">Concerts</a></div>
-            <div class="nav-item"><a class="nav-link" href="artists.html">Artists</a></div>
-            <div class="nav-item"><a class="nav-link" href="venues.html">Venues</a></div>
-            <div class="nav-item"><a class="nav-link" href="tickets.html">Tickets</a></div>
-            <div class="nav-item"><a class="nav-link" href="genres.html">Genres</a></div>
-          </div>
-        </nav>
-      </header>
+      <cf-header></cf-header>
 
       <main class="app-main page-venues" id="main">
         <section class="content venues-content">

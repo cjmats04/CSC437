@@ -1,0 +1,26 @@
+[
+  {
+    "id": "001",
+    "name": "Madison Square Garden",
+    "imgSrc": "/img/MSG.jpg",
+    "imgAlt": "Madison Square Garden",
+    "href": "/concerts.html#concert1",
+    "eventTitle": "Rock Night Live"
+  },
+  {
+    "id": "002",
+    "name": "Central Park Stage",
+    "imgSrc": "/img/Central-Park.jpg",
+    "imgAlt": "Central Park Stage",
+    "href": "/concerts.html#concert2",
+    "eventTitle": "Jazz in the Park"
+  },
+  {
+    "id": "003",
+    "name": "Rose Bowl",
+    "imgSrc": "/img/rose-bowl.jpg",
+    "imgAlt": "The Rose Bowl",
+    "href": "/concerts.html#concert3",
+    "eventTitle": "Oasis Reunion Tour"
+  }
+]

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up</title>
+  <script type="module" crossorigin src="/assets/newuser-7wDcuABZ.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/state-BwQnOobu.js">
+</head>
+<body class="page">
+  <mu-auth>
+    <h2>Create Account</h2>
+      <main class="card">
+        <newuser-form auth-api="/auth/register" profile-api="/api/profiles">
+          <label>
+            <span>Name:</span>
+            <input name="name" autocomplete="name" />
+          </label>
+          <label>
+            <span>Email:</span>
+            <input name="email" type="email" autocomplete="email" />
+          </label>
+          <label>
+            <span>Username:</span>
+            <input name="username" autocomplete="off" />
+          </label>
+          <label>
+            <span>Password:</span>
+            <input type="password" name="password" />
+          </label>
+        </newuser-form>
+      </main>
+      <p>
+        Already have an account?
+        <a href="login.html">Login</a>
+      </p>
+    </mu-auth>
+  </body>
+</html>

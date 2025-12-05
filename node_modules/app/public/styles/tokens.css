@@ -1,0 +1,61 @@
+/* Design tokens */
+:root {
+  /* Color palette */
+  /* Core color tokens as ready-to-use rgb() values */
+  --bg: rgb(255 255 255);
+  --surface: rgb(247 248 250);
+  --text: rgb(17 24 39);
+  --muted: rgb(100 116 139);
+  --primary: rgb(59 130 246);
+  --primary-foreground: rgb(255 255 255);
+  --accent: rgb(234 88 12);
+  --success: rgb(16 185 129);
+  --warning: rgb(245 158 11);
+  --danger: rgb(239 68 68);
+
+  /* Backwards-compatible aliases expected by page.css and other styles */
+  --page-bg: var(--bg);
+  --page-surface: var(--surface);
+  --muted: var(--muted);
+  /* --text and --primary remain as RGB color strings above and are used directly */
+
+  /* Typography */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol";
+  --base-font-size: 16px;
+  --line-height: 1.5;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* Elevation / shadow */
+  --shadow-sm: 0 1px 2px rgba(2,6,23,0.06);
+  --shadow-md: 0 6px 18px rgba(2,6,23,0.08);
+
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-medium: 250ms;
+  --ease: cubic-bezier(.2,.9,.4,1);
+}
+
+/* Dark mode token overrides: toggled by adding `dark-mode` to the <body> element */
+body.dark-mode {
+  --bg: rgb(15 23 42); /* very dark blue-gray */
+  --surface: rgb(30 41 59); /* slightly lighter surface */
+  --text: rgb(248 250 252); /* near-white text */
+  --muted: rgb(148 163 184);
+  --primary: rgb(96 165 250); /* lighter blue for primary accent */
+  --primary-foreground: rgb(10 20 30);
+  /* Also override the page-level aliases so elements on <html> and other roots pick up dark values */
+  --page-bg: rgb(15 23 42);
+  --page-surface: rgb(22 29 48);
+}

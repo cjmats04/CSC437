@@ -1,0 +1,44 @@
+[
+	{
+		"id": "t-001",
+		"concertId": "c-001",
+		"type": "VIP",
+		"description": "Front-row seating, early entry and complimentary drink voucher.",
+		"price": 150
+	},
+	{
+		"id": "t-002",
+		"concertId": "c-001",
+		"type": "General",
+		"description": "General admission standing area.",
+		"price": 50
+	},
+	{
+		"id": "t-003",
+		"concertId": "c-002",
+		"type": "General",
+		"description": "General admission seating on the lawn.",
+		"price": 30
+	},
+	{
+		"id": "t-004",
+		"concertId": "c-002",
+		"type": "Balcony",
+		"description": "Reserved balcony seating with a clear view of the stage.",
+		"price": 60
+	},
+	{
+		"id": "t-005",
+		"concertId": "c-003",
+		"type": "Floor",
+		"description": "Standing on the floor close to the stage.",
+		"price": 120
+	},
+	{
+		"id": "t-006",
+		"concertId": "c-003",
+		"type": "General",
+		"description": "General admission seating.",
+		"price": 60
+	}
+]

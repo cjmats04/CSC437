@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ConcertFinder</title>
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/page.css" />
+  <script type="module" src="/js/darkmode.js"></script>
+  <script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+  <mu-history provides="cf:history">
+    <mu-auth provides="cf:auth" redirect="/login.html">
+      <mu-store provides="cf:model">
+        <div id="app" class="app-root">
+          <cf-header></cf-header>
+          <mu-switch></mu-switch>
+
+        </div>
+      </mu-store>
+    </mu-auth>
+  </mu-history>
+</body>
+</html>

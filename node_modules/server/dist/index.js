@@ -23,16 +23,30 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var import_express = __toESM(require("express"));
 var import_mongo = require("./services/mongo");
+var import_promises = __toESM(require("node:fs/promises"));
+var import_path = __toESM(require("path"));
 var import_auth = __toESM(require("./routes/auth"));
 var import_venues = __toESM(require("./routes/venues"));
+var import_concerts = __toESM(require("./routes/concerts"));
+var import_tickets = __toESM(require("./routes/tickets"));
+var import_profiles = __toESM(require("./routes/profiles"));
 (0, import_mongo.connect)("ConcertFinder");
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
 const staticDir = process.env.STATIC || "public";
 app.use(import_express.default.static(staticDir));
 app.use(import_express.default.json());
+app.use("/app", (req, res) => {
+  const indexHtml = import_path.default.resolve(staticDir, "index.html");
+  import_promises.default.readFile(indexHtml, { encoding: "utf8" }).then(
+    (html) => res.send(html)
+  );
+});
 app.use("/auth", import_auth.default);
 app.use("/api/venues", import_venues.default);
+app.use("/api/concerts", import_concerts.default);
+app.use("/api/tickets", import_tickets.default);
+app.use("/api/profiles", import_profiles.default);
 app.get("/hello", (req, res) => {
   res.send("Hello, World");
 });

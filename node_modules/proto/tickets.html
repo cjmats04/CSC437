@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tickets</title>
+  <link rel="stylesheet" href="/styles/reset.css" />
+  <link rel="stylesheet" href="/styles/page.css" />
+    <script type="module" src="/js/darkmode.js"></script>
+    <script type="module">
+    import { define, Auth } from "@calpoly/mustang";
+    import { AppHeader } from "/src/cf-header.ts";
+
+    define({
+      "cf-header": AppHeader, 
+
+      "mu-auth": Auth.Provider
+    });
+  </script>
+</head>
+<body>
+  <div id="app" class="app-root">
+    <cf-header></cf-header>
+
+    <main class="app-main page-tickets" id="main">
+      <section class="content tickets-content">
+        <h1 class="page-title">All Tickets</h1>
+        <dl class="entity-list tickets-list">
+          <dt id="vip" class="entity-term ticket-item">VIP Pass</dt>
+          <dd class="entity-desc">Concert: <a href="concerts.html#concert1">Rock Night Live</a></dd>
+
+          <dt id="general" class="entity-term ticket-item">General Admission</dt>
+          <dd class="entity-desc">Concert: <a href="concerts.html#concert2">Jazz in the Park</a></dd>
+        </dl>
+
+        <p class="back-link"><a href="index.html">Back to Home</a></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

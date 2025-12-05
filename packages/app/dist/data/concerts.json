@@ -1,0 +1,32 @@
+[
+  {
+    "id": "c-001",
+    "title": "Rock Night Live",
+    "iconSrc": "/icons/genres.svg#icon-rock",
+    "date": "October 10, 2025",
+    "venueId": "001",
+    "artist": "The Rockers",
+    "genre": "Rock",
+    "tickets": ["VIP", "General"]
+  },
+  {
+    "id": "c-002",
+    "title": "Jazz in the Park",
+    "iconSrc": "/icons/genres.svg#icon-jazz",
+    "date": "October 15, 2025",
+    "venueId": "002",
+    "artist": "Smooth Jazz Ensemble",
+    "genre": "Jazz",
+    "tickets": ["General"]
+  },
+  {
+    "id": "c-003",
+    "title": "Oasis Reunion Tour",
+    "iconSrc": "/icons/genres.svg#icon-rock",
+    "date": "November 5, 2025",
+    "venueId": "003",
+    "artist": "Oasis",
+    "genre": "Rock",
+    "tickets": ["Floor", "General"]
+  }
+]
