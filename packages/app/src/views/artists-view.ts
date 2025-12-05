@@ -14,14 +14,20 @@ export class ArtistsViewElement extends LitElement {
           <dl class="entity-list artists-list">
             <dt id="artist1" class="entity-term artist-item">The Rockers</dt>
             <dd class="entity-desc">
-              (<a href="concerts.html#concert1">Rock Night Live</a>)<br>
-              Genre: <a href="genres.html#rock">Rock</a>
+              Genre: Rock
+              Shows: <a href="/app/concerts/c-001">Rock Night Live</a><br>
             </dd>
 
             <dt id="artist2" class="entity-term artist-item">Smooth Jazz Ensemble</dt>
             <dd class="entity-desc">
-              (<a href="concerts.html#concert2">Jazz in the Park</a>)<br>
-              Genre: <a href="genres.html#jazz">Jazz</a>
+              Genre: Jazz
+              Shows: <a href="/app/concerts/c-002">Jazz in the Park</a><br>
+            </dd>
+
+            <dt id="artist3" class="entity-term artist-item">Oasis</dt>
+            <dd class="entity-desc">
+              Genre: Rock
+              Shows: <a href="/app/concerts/c-003">Oasis Reunion Tour</a><br>
             </dd>
           </dl>
         </section>
